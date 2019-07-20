@@ -30,7 +30,7 @@ fun updateApp(
         versionCode: Int,
         metaUrl: String,
         apkUrl: String,
-        changelogUrl: String = ""): Unit {
+        changelogUrl: String = "") {
     GlobalScope.launch(Dispatchers.Main) {
         if (versionCode == 1) {
             Log.v(tag, "App has debug version code $versionCode")
