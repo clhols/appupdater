@@ -22,6 +22,7 @@ class UpdateActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_AppCompat_Light_NoActionBar)
         setContentView(R.layout.activity_update)
         findViewById<ProgressBar?>(R.id.progress)?.visibility = View.VISIBLE
 
