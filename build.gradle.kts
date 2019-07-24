@@ -32,6 +32,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.11.1")
     implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.41")
     implementation("androidx.appcompat:appcompat:1.1.0-rc01")
-    implementation("com.squareup.okhttp3:okhttp:4.0.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.4.2")
+    implementation("com.squareup.okhttp3:okhttp:4.0.1")
+    testImplementation("junit:junit:4.12")
 }
