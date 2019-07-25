@@ -1,7 +1,7 @@
 package dk.youtec.appupdater
 
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import org.junit.Assert.assertEquals
+import org.junit.Test
 import java.io.File
 
 open class AppUpdaterTest {
@@ -12,6 +12,6 @@ open class AppUpdaterTest {
 
         val versionCode = extractVersionCode(metaString)
 
-        assertEquals(1811011803, versionCode)
+        assertEquals(1907242000, versionCode)
     }
 }
