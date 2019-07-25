@@ -79,7 +79,7 @@ private suspend fun getAppVersionFromMeta(
         val metaString = response.body?.string() ?: ""
 
         extractVersionCode(metaString)
-    } catch (e: IOException) {
+    } catch (e: Exception) {
         Log.w(tag, e.message)
         BuildConfig.VERSION_CODE
     }
