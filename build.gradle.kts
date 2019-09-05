@@ -33,6 +33,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.12.0")
     implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.50")
     implementation("androidx.appcompat:appcompat:1.1.0-rc01")
-    implementation("com.squareup.okhttp3:okhttp:4.1.0")
+    implementation("com.squareup.okhttp3:okhttp:4.1.1")
     testImplementation("junit:junit:4.12")
 }
