@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-android-extensions")
     id("kotlinx-serialization")
+    id("maven-publish")
 }
 
 android {
@@ -35,4 +36,18 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("com.squareup.okhttp3:okhttp:4.2.2")
     testImplementation("junit:junit:4.12")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create("appupdaterLib", MavenPublication::class.java) {
+                groupId = "dk.youtec"
+                artifactId = "appupdater-lib"
+                version = "1.0.0"
+
+                from(components["release"])
+            }
+        }
+    }
 }
