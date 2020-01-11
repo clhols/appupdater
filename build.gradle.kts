@@ -34,8 +34,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
     implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("com.squareup.okhttp3:okhttp:4.2.2")
-    testImplementation("junit:junit:4.12")
+    implementation("com.squareup.okhttp3:okhttp:4.3.1")
+    testImplementation("junit:junit:4.13")
 }
 
 afterEvaluate {
