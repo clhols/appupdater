@@ -1,1 +1,20 @@
-[{"outputType":{"type":"APK"},"apkData":{"type":"MAIN","splits":[],"versionCode":1907242000,"versionName":"1.0.0","enabled":true,"outputFile":"androidApp-tv-debug.apk","fullName":"tvDebug","baseName":"tv-debug"},"path":"androidApp-tv-debug.apk","properties":{}}]
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "dk.youtec.drchannels.mobile",
+  "variantName": "mobileRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 2003041900,
+      "versionName": "2003041900",
+      "enabled": true,
+      "outputFile": "androidApp-mobile-release.apk"
+    }
+  ]
+}

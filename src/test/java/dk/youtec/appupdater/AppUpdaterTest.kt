@@ -12,6 +12,6 @@ open class AppUpdaterTest {
 
         val versionCode = extractVersionCode(metaString)
 
-        assertEquals(1907242000, versionCode)
+        assertEquals(2003041900, versionCode)
     }
 }

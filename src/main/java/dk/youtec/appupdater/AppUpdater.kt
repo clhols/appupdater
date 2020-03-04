@@ -86,13 +86,13 @@ private suspend fun getAppVersionFromMeta(
 }
 
 internal fun extractVersionCode(metaString: String): Int {
-    val outputs = Json.nonstrict.parse(Output.serializer().list, metaString) as? List<*>
-            ?: emptyList<Output>()
-
-    return outputs
-            .asSequence()
-            .filterIsInstance<Output>()
-            .firstOrNull()?.apkData?.versionCode ?: BuildConfig.VERSION_CODE
+    return try {
+        val output = Json.nonstrict.parse(Output.serializer(), metaString)
+        output.elements.firstOrNull()?.versionCode ?: BuildConfig.VERSION_CODE
+    } catch (e: Exception) {
+        Log.e(tag, e.message, e)
+        BuildConfig.VERSION_CODE
+    }
 }
 
 private suspend fun getChangelog(
