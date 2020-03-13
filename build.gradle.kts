@@ -8,7 +8,7 @@ plugins {
 
 android {
     compileSdkVersion(29)
-    buildToolsVersion("29.0.2")
+    buildToolsVersion("29.0.3")
 
     defaultConfig {
         minSdkVersion(21)
@@ -29,12 +29,12 @@ androidExtensions { isExperimental = true }
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.70")
     implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.70")
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.3"))
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.4"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
     implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("com.squareup.okhttp3:okhttp:4.3.1")
+    implementation("com.squareup.okhttp3:okhttp:4.4.1")
     testImplementation("junit:junit:4.13")
 }
 
