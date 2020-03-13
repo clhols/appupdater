@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 import okhttp3.Request
 import java.io.IOException
@@ -84,9 +85,10 @@ private suspend fun getAppVersionFromMeta(
     }
 }
 
+@OptIn(UnstableDefault::class)
 internal fun extractVersionCode(metaString: String): Int {
     return try {
-        val output = Json.nonstrict.parse(Output.serializer(), metaString)
+        val output = Json.parse(Output.serializer(), metaString)
         output.elements.firstOrNull()?.versionCode ?: BuildConfig.VERSION_CODE
     } catch (e: Exception) {
         Log.e(tag, e.message, e)
