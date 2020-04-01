@@ -9,6 +9,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import okhttp3.CacheControl
 import okhttp3.Request
@@ -17,7 +18,7 @@ import okio.sink
 import java.io.File
 import java.io.IOException
 
-class UpdateActivity : AppCompatActivity(), CoroutineScope by MainScope() {
+class UpdateActivity : AppCompatActivity() {
     private val tag = UpdateActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class UpdateActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
         val apkUrl = intent.getStringExtra("apkUrl") ?: ""
 
-        launch {
+        lifecycleScope.launch {
             try {
                 downloadApk(this@UpdateActivity, apkUrl)?.also {
                     installApk(this@UpdateActivity, it)
@@ -44,11 +45,6 @@ class UpdateActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 overridePendingTransition(0, 0)
             }
         }
-    }
-
-    override fun onDestroy() {
-        cancel()
-        super.onDestroy()
     }
 
     private suspend fun downloadApk(
