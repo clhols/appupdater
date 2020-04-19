@@ -27,8 +27,8 @@ android {
 androidExtensions { isExperimental = true }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.71")
-    implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.71")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.72")
     implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.5"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
@@ -36,8 +36,9 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    implementation("com.squareup.okhttp3:okhttp:4.4.1")
-    testImplementation("junit:junit:4.13")
+    implementation("com.squareup.okhttp3:okhttp:4.5.0")
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
 
 afterEvaluate {
