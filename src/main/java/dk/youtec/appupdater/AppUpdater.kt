@@ -4,6 +4,8 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageInfo
+import android.os.Build
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -71,7 +73,7 @@ private fun showUpdateDialog(activity: Activity, message: String, apkUrl: String
 private suspend fun getAppVersionFromMeta(
         context: Context,
         metaUrl: String
-): Int = withContext(Dispatchers.IO) {
+): Long = withContext(Dispatchers.IO) {
     try {
         val httpClient = OkHttpClientFactory.getInstance(context)
 
@@ -82,20 +84,16 @@ private suspend fun getAppVersionFromMeta(
         extractVersionCode(metaString)
     } catch (e: Exception) {
         Log.w(tag, e.message ?: "")
-        BuildConfig.VERSION_CODE
+        context.getVersionCode()
     }
 }
 
 @OptIn(UnstableDefault::class)
-internal fun extractVersionCode(metaString: String): Int {
-    return try {
-        val output = Json(JsonConfiguration(ignoreUnknownKeys = true))
-                .parse(Output.serializer(), metaString)
-        output.elements.firstOrNull()?.versionCode ?: BuildConfig.VERSION_CODE
-    } catch (e: Exception) {
-        Log.e(tag, e.message, e)
-        BuildConfig.VERSION_CODE
-    }
+internal fun extractVersionCode(metaString: String): Long {
+    val output = Json(JsonConfiguration(ignoreUnknownKeys = true))
+            .parse(Output.serializer(), metaString)
+    return output.elements.firstOrNull()?.versionCode
+            ?: throw IllegalStateException("No versionCode found")
 }
 
 private suspend fun getChangelog(
@@ -114,4 +112,13 @@ private suspend fun getChangelog(
             ""
         }
     } else ""
+}
+
+private fun Context.getVersionCode(): Long {
+    val pInfo: PackageInfo = packageManager.getPackageInfo(packageName, 0)
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        pInfo.longVersionCode
+    } else {
+        pInfo.versionCode.toLong()
+    }
 }
