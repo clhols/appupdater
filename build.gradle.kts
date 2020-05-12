@@ -29,7 +29,7 @@ androidExtensions { isExperimental = true }
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
     implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.72")
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.5"))
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.6"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
