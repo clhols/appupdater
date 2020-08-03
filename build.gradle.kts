@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(29)
-    buildToolsVersion("29.0.3")
+    compileSdkVersion(30)
+    buildToolsVersion("30.0.1")
 
     defaultConfig {
         minSdkVersion(21)
-        targetSdkVersion(29)
+        targetSdkVersion(30)
 
         buildTypes {
             getByName("release") {
@@ -36,7 +36,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    implementation("com.squareup.okhttp3:okhttp:4.7.2")
+    implementation("com.squareup.okhttp3:okhttp:4.8.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
