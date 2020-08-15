@@ -11,9 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 import okhttp3.Request
 import java.io.IOException
 
@@ -88,10 +86,9 @@ private suspend fun getAppVersionFromMeta(
     }
 }
 
-@OptIn(UnstableDefault::class)
 internal fun extractVersionCode(metaString: String): Long {
-    val output = Json(JsonConfiguration(ignoreUnknownKeys = true))
-            .parse(Output.serializer(), metaString)
+    val output = Json{ ignoreUnknownKeys = true }
+            .decodeFromString(Output.serializer(), metaString)
     return output.elements.firstOrNull()?.versionCode
             ?: throw IllegalStateException("No versionCode found")
 }
