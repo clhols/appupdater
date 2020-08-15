@@ -27,7 +27,6 @@ android {
 androidExtensions { isExperimental = true }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0")
     implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.0")
     implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.9"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
