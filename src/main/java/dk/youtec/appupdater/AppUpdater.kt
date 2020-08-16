@@ -41,6 +41,7 @@ fun updateApp(
 
             if (metaAppVersion > versionCode) {
                 val message = activity.getString(R.string.newAppVersionReady) +
+                        "\n\n" +
                         getChangelog(activity, changelogUrl).let {
                             it.lines().take(20).run {
                                 if (indexOf("") > 0) {
