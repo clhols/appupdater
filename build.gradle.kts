@@ -25,8 +25,8 @@ android {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.10")
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.9-native-mt"))
+    implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.20")
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.4.2-native-mt"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
