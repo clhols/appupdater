@@ -8,7 +8,7 @@ plugins {
 
 android {
     compileSdkVersion(30)
-    buildToolsVersion("30.0.2")
+    buildToolsVersion("30.0.3")
 
     defaultConfig {
         minSdkVersion(21)
@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.20")
+    implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.21")
     implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.4.2-native-mt"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
