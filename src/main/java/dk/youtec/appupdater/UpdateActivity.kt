@@ -4,12 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 import androidx.core.content.FileProvider
-import androidx.lifecycle.lifecycleScope
+import androidx.core.view.WindowCompat
 import kotlinx.coroutines.*
 import okhttp3.CacheControl
 import okhttp3.Request
@@ -17,17 +15,22 @@ import okio.buffer
 import okio.sink
 import java.io.File
 import java.io.IOException
+import androidx.compose.ui.platform.setContent
+import androidx.lifecycle.lifecycleScope
 
-class UpdateActivity : AppCompatActivity() {
+class UpdateActivity : ComponentActivity() {
     private val tag = UpdateActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.Theme_AppCompat_Light_NoActionBar)
-        setContentView(R.layout.activity_update)
-        findViewById<ProgressBar?>(R.id.progress)?.visibility = View.VISIBLE
 
         val apkUrl = intent.getStringExtra("apkUrl") ?: ""
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        setContent {
+            Loader()
+        }
 
         lifecycleScope.launch {
             try {
