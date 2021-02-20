@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.core.content.FileProvider
 import androidx.core.view.WindowCompat
 import kotlinx.coroutines.*
@@ -15,7 +16,6 @@ import okio.buffer
 import okio.sink
 import java.io.File
 import java.io.IOException
-import androidx.compose.ui.platform.setContent
 import androidx.lifecycle.lifecycleScope
 
 class UpdateActivity : ComponentActivity() {
