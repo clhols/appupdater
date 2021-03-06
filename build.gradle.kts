@@ -49,8 +49,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling:1.0.0-beta01")
     implementation("androidx.compose.foundation:foundation-layout:1.0.0-beta01")
     implementation("androidx.compose.material:material:1.0.0-beta01")
-    implementation("dev.chrisbanes.accompanist:accompanist-insets:0.6.0")
-    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation("dev.chrisbanes.accompanist:accompanist-insets:0.6.1")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
