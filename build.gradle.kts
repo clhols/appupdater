@@ -48,7 +48,7 @@ dependencies {
     implementation("androidx.compose.runtime:runtime:1.0.0-beta02")
     implementation("androidx.compose.foundation:foundation-layout:1.0.0-beta02")
     implementation("androidx.compose.material:material:1.0.0-beta02")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.0.0-beta02")
+    implementation("androidx.compose.ui:ui-tooling:1.0.0-beta02")
     implementation("dev.chrisbanes.accompanist:accompanist-insets:0.6.1")
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
