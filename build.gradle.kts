@@ -8,8 +8,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
-    buildToolsVersion("30.0.3")
+    compileSdk = 30
+    buildToolsVersion = "30.0.3"
 
     buildFeatures {
         // Disable unused AGP features
@@ -20,8 +20,8 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(30)
+        minSdk = 21
+        targetSdk = 30
 
         buildTypes {
             getByName("release") {
