@@ -5,7 +5,9 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <application>
 
-        <activity android:name="dk.youtec.appupdater.UpdateActivity">
+        <activity
+            android:name="dk.youtec.appupdater.UpdateActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
