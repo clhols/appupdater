@@ -8,8 +8,8 @@ plugins {
 }
 
 android {
-    compileSdk = 30
-    buildToolsVersion = "30.0.3"
+    compileSdk = Versions.compileSdk
+    buildToolsVersion = Versions.buildTools
 
     buildFeatures {
         // Disable unused AGP features
@@ -20,8 +20,8 @@ android {
     }
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 30
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
 
         buildTypes {
             getByName("release") {
@@ -35,14 +35,14 @@ android {
 
 dependencies {
     implementation(compose.desktop.currentOs)
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.5.1-native-mt"))
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:${Versions.coroutines}"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.serialization}")
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
     implementation("androidx.activity:activity-compose:1.3.1")
-    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("com.squareup.okhttp3:okhttp:${Versions.okhttp}")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
