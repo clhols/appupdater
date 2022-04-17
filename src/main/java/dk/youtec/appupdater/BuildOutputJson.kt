@@ -19,5 +19,4 @@ data class Element(
         val type: String,
         val versionCode: Long,
         val versionName: String,
-        val enabled: Boolean,
         val outputFile: String) : Parcelable

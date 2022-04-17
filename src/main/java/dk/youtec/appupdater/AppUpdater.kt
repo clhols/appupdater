@@ -15,6 +15,10 @@ import kotlin.coroutines.coroutineContext
 
 private const val tag = "AppUpdater"
 
+private val json = Json {
+    ignoreUnknownKeys = true
+}
+
 /**
  * Updates the app to a newer version.
  *
@@ -84,14 +88,13 @@ private suspend fun getAppVersionFromMeta(
 
         extractVersionCode(metaString)
     } catch (e: Exception) {
-        Log.w(tag, e.message ?: "")
-        context.getVersionCode()
+        Log.e(tag, e.message ?: "", e)
+        -1
     }
 }
 
 internal fun extractVersionCode(metaString: String): Long {
-    val output = Json { ignoreUnknownKeys = true }
-        .decodeFromString(Output.serializer(), metaString)
+    val output = json.decodeFromString(Output.serializer(), metaString)
     return output.elements.firstOrNull()?.versionCode
         ?: throw IllegalStateException("No versionCode found")
 }
