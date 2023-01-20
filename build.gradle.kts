@@ -7,6 +7,10 @@ plugins {
     id("maven-publish")
 }
 
+compose {
+    kotlinCompilerPlugin.set("androidx.compose.compiler:compiler:${Versions.composeCompiler}")
+}
+
 android {
     namespace = "dk.youtec.appupdater"
     compileSdk = Versions.compileSdk
