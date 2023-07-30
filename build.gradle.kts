@@ -8,7 +8,7 @@ plugins {
 }
 
 compose {
-    kotlinCompilerPlugin.set("androidx.compose.compiler:compiler:${Versions.composeCompiler}")
+    kotlinCompilerPlugin.set(Versions.composeCompiler)
 }
 
 android {
